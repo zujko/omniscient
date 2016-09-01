@@ -1,0 +1,13 @@
+cassandra:
+  image: "cassandra:3.7"
+  volumes_from:
+    - data
+data:
+  container_name: db-data
+  image: "busybox:latest"
+  volumes:
+    - /data/casandra:/var/lib/casandra
+omni:
+  build: .
+  links:
+    - cassandra
