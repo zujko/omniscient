@@ -4,3 +4,5 @@ ENV omni /home/omni
 WORKDIR ${omni}
 
 ADD . ${omni}
+
+ENTRYPOINT omniscient
